@@ -4,7 +4,7 @@ import { Form, TextArea } from 'semantic-ui-react'
 
 const TextInput = () => (
   <Form>
-    <TextArea placeholder='Tell us more' />
+    <TextArea placeholder='Tell us more'/>
   </Form>
 )
 

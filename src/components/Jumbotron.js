@@ -7,7 +7,7 @@ const Jumbo = (props) => {
     <div>
       <Jumbotron className='Jumbo-background'>
         <img className="photo-bio" src={photo} alt="avatar"/>
-        <h1 className="display-3">Andrea Chihaby</h1>
+        <h3 className="display-3">Andrea Chihaby</h3>
         <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <p className="lead">

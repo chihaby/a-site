@@ -34,14 +34,15 @@
   background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin-bottom: 0 !important;
+  margin-top: -3%;
 }
 
 .photo-bio {
   border: 5px solid rgb(127,134,140);
   border-radius: 50%;
   /* padding: 5px; */
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   float: left;
   margin: 25px;
 }
@@ -56,7 +57,7 @@
 
 .Nav-background {
   background-color: rgb(127,134,140);
-  padding: 30px;
+  padding: 10px;
   color: white;
 }
 
