@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import TextInput from './TextInput'
+import TextInput from './TextInput';
+import TextInputLarge from './TextInputLarge';
 
-const Main = (props) => {
+const Topic = (props) => {
   return (
     <Container>
       <Row className="topic-header">
@@ -13,7 +14,7 @@ const Main = (props) => {
         </Col>
         <Col sm="6" >
           <h4>Topic of the Day</h4>
-          <TextInput style={{height: "200px"}}/>
+          <TextInputLarge />
         </Col>
         <Col sm="3" >
         <h4>After Her</h4>
@@ -25,4 +26,4 @@ const Main = (props) => {
   );
 }
 
-export default Main;
+export default Topic;

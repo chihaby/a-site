@@ -3,13 +3,13 @@ import './App.css';
 // import { Button } from 'reactstrap';
 import Jumbo from './components/Jumbotron';
 import Navbar from './components/Navbar';
-import Main from './components/Main';
+import Topic  from './components/Topic';
 function App() {
   return (
     <div>
       <Jumbo />
       <Navbar />
-      <Main />
+      <Topic />
     </div>
   );
 }
