@@ -3,7 +3,7 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  // NavbarBrand,
+  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
@@ -22,13 +22,13 @@ const Example = (props) => {
   return (
     <div className="Nav-background">
       <Navbar light expand="md">
-        {/* <NavbarBrand className='nav-link' href="/" >What we do</NavbarBrand> */}
+        <NavbarBrand className='nav-link' href="/" >What we do</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar style={{margin: "auto"}}>
-            <NavItem >
+            {/* <NavItem >
               <NavLink className='nav-link' href="/components/" >What We Do</NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem >
               <NavLink className='nav-link' href="/components/" >Interviews</NavLink>
             </NavItem>

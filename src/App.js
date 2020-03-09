@@ -12,8 +12,7 @@ const Button = styled.button`
   border-radius: 3px;
   border: 2px solid palevioletred;
   color: palevioletred;
-  /* margin: 0.5em 1em; */
-  margin-top:1em;
+  margin: 2em 1em;
   padding: 0.25em 1em;
   background: palevioletred;
   color: white;
@@ -54,7 +53,7 @@ class App extends React.Component {
         <Container>
           <Button primary> <span role="img" aria-label={""}>⏪ </span>Before Her</Button>
         </Container>
-        <h3 style={{textAlign: "center", margin: "10px"}}>Topic of the day</h3>
+        <h3 style={{textAlign: "center"}}>Topic of the day</h3>
         <TextInputLarge />
         <Container>
         <Button primary>After Her <span role="img" aria-label={""}> ⏩</span></Button>
