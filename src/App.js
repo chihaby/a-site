@@ -4,22 +4,12 @@ import styled from 'styled-components';
 // import { Button } from 'reactstrap';
 import Jumbo from './components/Jumbotron';
 import Navbar from './components/Navbar';
-import Topic  from './components/Topic';
-import TextInputLarge from './components/TextInputLarge';
+// import Topic  from './components/Topic';
+// import TextInputLarge from './components/TextInputLarge';
 import ModalExampleScrollingContentForBefore from './components/BeforeModal';
 import ModalExampleScrollingContentForAfter from './components/AfterModal';
+import Form from './components/Form';
 
-
-// const Button = styled.button`
-//   background: transparent;
-//   border-radius: 3px;
-//   /* border: 2px solid palevioletred; */
-//   /* color: palevioletred; */
-//   margin: 2em 1em;
-//   padding: 0.25em 1em;
-//   background: rgb(49,61,85);
-//   color: white;
-// `;
 
 const Container = styled.div`
   text-align: center;
@@ -44,12 +34,6 @@ class App extends React.Component {
     this.setState({ width: window.innerWidth });
   };
 
-  // showModal = () => {
-  //   this.setState({
-  //     modal: true
-  //   });
-  // }
-
   render () {
     const { width } = this.state;
     const isMobile = width <= 500;
@@ -66,13 +50,12 @@ class App extends React.Component {
             null
         }
           <Button primary>After Her <span role="img" aria-label={""}></span></Button> */}
-
           <ModalExampleScrollingContentForBefore />
           <ModalExampleScrollingContentForAfter />
         </Container>
-        <h3 style={{textAlign: "center"}}>Topic of the day</h3>
-        <TextInputLarge />
-
+        {/* <h3 style={{textAlign: "center"}}>Topic of the day</h3> */}
+        {/* <TextInputLarge /> */}
+        <Form />
       </div>
       );
     } else {
@@ -80,7 +63,11 @@ class App extends React.Component {
         <div>
           <Jumbo />
           <Navbar />
-          <Topic />
+          <Container >
+            <ModalExampleScrollingContentForBefore />
+            <ModalExampleScrollingContentForAfter />
+        </Container>
+          <Form />
         </div>
       );
     }
