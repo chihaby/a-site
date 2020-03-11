@@ -1,6 +1,6 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
-import photo from '../images/andrea.JPG'
+import photo from '../images/andrea.JPG';
 
 const Jumbo = (props) => {
   return (

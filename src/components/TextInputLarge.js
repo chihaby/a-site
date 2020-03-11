@@ -4,7 +4,7 @@ import { Form, TextArea } from 'semantic-ui-react'
 
 const TextInputLarge = () => (
   <Form>
-    <TextArea placeholder='Tell us more' style={{height: "200px"}}/>
+    <TextArea placeholder='Tell us more' style={{height: "700px"}}/>
   </Form>
 )
 
