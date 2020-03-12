@@ -5,35 +5,28 @@ import { collectIdsAndDocs } from '../utilities';
 
 class Form extends React.Component {
   state = {
-    title: '',
-    content: '',
-    posts: []
+    posts: [],
   }
+
+  unsubscribe = null;
 
   componentDidMount = async () => {
-    const snapshot = await firestore.collection('posts').get();
-
-    const posts = snapshot.docs.map(collectIdsAndDocs);
-
-    this.setState({ posts }); 
-    console.log({posts})  
+    this.unsubscribe = firestore.collection('posts').onSnapshot(snapshot => {
+      const posts = snapshot.docs.map(collectIdsAndDocs);
+      this.setState({ posts });
+    });
   };
 
-  handleCreate = async post => {
-    const { posts } = this.state;
-
-    const docRef = await firestore.collection('posts').add(post);
-    const doc = await docRef.get();
-
-    const newPost = collectIdsAndDocs(doc);
-
-    this.setState({ posts: [newPost, ...posts] });
-  }
+  componentWillUnmount = () => {
+    this.unsubscribe();
+  };
 
   render() {
     const { posts } = this.state;
     return (
-      <Posts posts={posts} onCreate={this.handleCreate}/>
+      <main>
+        <Posts posts={posts} />
+      </main>
     );
   }
 }
