@@ -4,7 +4,7 @@ import 'firebase/firestore';
 // initialize database
 
 const config = {
-  apiKey: "AIzaSyDS2-CGbidgB9BeLswLlCki2T3ADJuol3k",
+  apiKey: process.env.REACT_APP_ANDREA_API_KEY,
   authDomain: "andrea-5aa16.firebaseapp.com",
   databaseURL: "https://andrea-5aa16.firebaseio.com",
   projectId: "andrea-5aa16",
