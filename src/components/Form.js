@@ -11,7 +11,7 @@ class Form extends React.Component {
   }
 
   componentDidMount = async () => {
-    const snapshot = await firestore.collection('post').get();
+    const snapshot = await firestore.collection('posts').get();
 
     const posts = snapshot.docs.map(collectIdsAndDocs);
 
@@ -30,37 +30,9 @@ class Form extends React.Component {
     this.setState({ posts: [newPost, ...posts] });
   }
 
-  // handleChange = event => {
-  //   this.setState({value: event.target.value});
-  // }
-
-  // handleSubmit = event =>  {
-  //   alert('A name was submitted: ' + this.state.value);
-  //   event.preventDefault();
-  // // add spining wheel plus complete sign
-  // }
-
   render() {
     const { posts } = this.state;
     return (
-      // <form className='form' onSubmit={this.handleCreate}>
-      //   <label  >
-      //     <h3>Topic of the day</h3>
-      //     <textarea 
-      //       type="text" 
-      //       rows="5" 
-      //       cols="80" 
-      //       id="TITLE"
-      //       value={this.state.value} 
-      //       onChange={this.handleChange}
-      //       >
-      //     </textarea>
-      //     <h3>{this.state.value}</h3>
-      //     <h4>{this.state.posts.map(post =><div>{post.title}</div>)}</h4>
-      //     <h4>{this.state.posts.map(post =><div>{post.content}</div>)}</h4>
-      //   </label>
-      //   <input type="submit" value="Submit" />
-      // </form>
       <Posts posts={posts} onCreate={this.handleCreate}/>
     );
   }

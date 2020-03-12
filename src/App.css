@@ -115,6 +115,6 @@
 }
 
 .form {
-  text-align: center;
-  margin: auto;
+  margin: 15px auto;
+  display: block;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { textarea }
 
 class AddPost extends Component {
   state = { title: '', content: '' };
@@ -25,7 +26,7 @@ class AddPost extends Component {
       // },
       favorites: 0,
       comments: 0,
-      createdAt: new Date(),
+      // createdAt: new Date(),
     }
 
     onCreate(post);
@@ -36,23 +37,31 @@ class AddPost extends Component {
   render() {
     const { title, content } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} className="AddPost">
-        <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          value={title}
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          name="content"
-          placeholder="Body"
-          value={content}
-          onChange={this.handleChange}
-        />
-        <input className="create" type="submit" value="Create Post" />
-      </form>
+      <div style={{textAlign: 'center'}}>
+        <form onSubmit={this.handleSubmit}>
+          <input 
+            className='form'
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={title}
+            onChange={this.handleChange}
+          />
+
+          <textarea 
+            className='form'
+            type="text" 
+            rows="7" 
+            cols="60" 
+            name="content"
+            placeholder="Body"
+            value={content} 
+            onChange={this.handleChange}
+            >
+          </textarea>
+          <input className="form" type="submit" value="Create Post" />
+        </form>
+      </div>
     );
   }
 }
