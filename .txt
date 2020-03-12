@@ -5,3 +5,6 @@ arrow left for before her
 arrow right for after her
 https://www.youtube.com/watch?v=vmLaZafaw9E&t=22s
 make textarea on AddPost responsive
+google single user 
+edit post textarea
+There is an option for google auth signin annonymously
