@@ -8,3 +8,4 @@ make textarea on AddPost responsive
 google single user 
 edit post textarea
 There is an option for google auth signin annonymously
+send email of post copy when posted

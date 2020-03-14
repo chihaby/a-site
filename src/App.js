@@ -35,30 +35,22 @@ class App extends React.Component {
   };
 
   render () {
-    const { width } = this.state;
-    const isMobile = width <= 500;
+    // const { width } = this.state;
+    //const isMobile = width <= 500;
     
-    if(isMobile) {
-    return (
-      <div>
-        <Jumbo />
-        <Navbar />
-        <Container >
-          {/* <Button primary onClick={this.showModal}><span role="img" aria-label={""}></span>Before Her</Button>
-          {this.state.modal ?
-            <ModalExampleScrollingContent /> :
-            null
-        }
-          <Button primary>After Her <span role="img" aria-label={""}></span></Button> */}
-          <ModalExampleScrollingContentForBefore />
-          <ModalExampleScrollingContentForAfter />
-        </Container>
-        {/* <h3 style={{textAlign: "center"}}>Topic of the day</h3> */}
-        {/* <TextInputLarge /> */}
-        <Form />
-      </div>
-      );
-    } else {
+    // if(isMobile) {
+    // return (
+    //   <div>
+    //     <Jumbo />
+    //     <Navbar />
+    //     <Container >
+    //       <ModalExampleScrollingContentForBefore />
+    //       <ModalExampleScrollingContentForAfter />
+    //     </Container>
+    //     <Form />
+    //   </div>
+    //   );
+    // } else {
       return (
         <div>
           <Jumbo />
@@ -66,23 +58,12 @@ class App extends React.Component {
           <Container >
             <ModalExampleScrollingContentForBefore />
             <ModalExampleScrollingContentForAfter />
-        </Container>
+          </Container>
           <Form />
         </div>
       );
-    }
+  //  }
   }
 }
 
 export default App;
-
-// Functional component if needed
-// function App() {
-//   return (
-//     <div>
-//       <Jumbo />
-//       <Navbar />
-//       <Topic />
-//     </div>
-//   );
-// }

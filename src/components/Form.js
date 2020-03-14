@@ -1,23 +1,16 @@
 import React from 'react';
 import Posts from './Posts';
-import { firestore, auth } from '../firebase';
-import { collectIdsAndDocs } from '../utilities';
+import { auth } from '../firebase';
 import Authentication from './Authentication';
 
 class Form extends React.Component {
   state = {
-    posts: [],
     user: null,
   }
 
-  unsubscribeFromFirestore = null;
   unsubscribeFromAuth = null;
 
   componentDidMount = async () => {
-    this.unsubscribeFromFirestore = firestore.collection('posts').onSnapshot(snapshot => {
-      const posts = snapshot.docs.map(collectIdsAndDocs);
-      this.setState({ posts });
-    });
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ user })
     })
@@ -28,11 +21,11 @@ class Form extends React.Component {
   };
 
   render() {
-    const { posts, user } = this.state;
+    const { user } = this.state;
     return (
-      <main>
+      <main className="wrapper">
         <Authentication user={user} />
-        <Posts posts={posts} />
+        <Posts />
       </main>
     );
   }

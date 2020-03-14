@@ -1,5 +1,6 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
+import { signInWithGoogle } from '../firebase';
 import photo from '../images/andrea.JPG';
 
 const Jumbo = (props) => {
@@ -11,7 +12,7 @@ const Jumbo = (props) => {
         <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <p className="lead">
-          <Button color="primary">Learn More</Button>
+          <Button onClick={signInWithGoogle} color="primary">Sign In</Button>
         </p>
       </Jumbotron>
     </div>

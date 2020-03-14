@@ -118,3 +118,11 @@
   margin: 15px auto;
   display: block;
 }
+
+.wrapper {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center
+}

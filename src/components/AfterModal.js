@@ -25,20 +25,8 @@ const ModalExampleScrollingContentForAfter = () => (
             Interdum praesent ut penatibus fames eros ad consectetur sed.
           </p>
           </div>
-        {/* {_.times(8, (i) => (
-          <Image
-            key={i}
-            src={photo} alt="avatar"
-            style={{ paddingBottom: 5 }}
-          />
-        ))} */}
       </Modal.Description>
     </Modal.Content>
-    <Modal.Actions>
-      {/* <Button primary>     
-        Proceed <Icon name='chevron right' />
-      </Button> */}
-    </Modal.Actions>
   </Modal>
 )
 
