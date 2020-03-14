@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import moment from 'moment';
 import { firestore } from '../firebase';
+import { UserContext } from '../providers/UserProvider';
+
+const belongsToCurrentUser = (CurrentUser, postAuthor) => {
+  if(!CurrentUser) return false;
+  return CurrentUser.uid === postAuthor.uid;
+}
 
 const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
-
+  const currentUser = useContext(UserContext);
   const postRef = firestore.doc(`posts/${id}`);
 
   const remove = () => postRef.delete();
-  const star = () => postRef.update({ stars: stars + 1 });
+  // const star = () => postRef.update({ stars: stars + 1 });
 
   return (
       <article className="form" style={{textAlign: 'center'}}>
@@ -17,12 +23,12 @@ const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
         </div>
         <div className="Post--meta" style={{textAlign: 'center'}}>
           <div>
-            <p>
+            {/* <p>
               <span role="img" aria-label="star">
                 ⭐️
               </span>
               {stars}
-            </p>
+            </p> */}
             <p>
               <span role="img" aria-label="comments">
                 🙊
@@ -33,8 +39,8 @@ const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
             {/* <p>{moment(createdAt).calendar()}</p> */}
           </div>
           <div>
-            <button  className="star" onClick={star}>Star</button>
-            <button  onClick={remove}>Delete</button>
+            {/* <button  className="star" onClick={star}>Star</button> */}
+            {belongsToCurrentUser(currentUser, user) && <button onClick={remove}>Delete</button>}
           </div>
         </div>
       </article>

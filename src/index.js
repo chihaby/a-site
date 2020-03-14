@@ -6,8 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 import PostsProvider from './providers/PostsProvider';
+import UserProvider from './providers/UserProvider';
 
-ReactDOM.render(<PostsProvider><App /></PostsProvider>, document.getElementById('root'));
+ReactDOM.render(
+  <UserProvider>
+    <PostsProvider>
+      <App />
+    </PostsProvider>
+  </UserProvider>, 
+  document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
