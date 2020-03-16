@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react';
-import { auth, createUserProfileDocument } from '../firebase';
+import { auth } from '../firebase';
 
 export const UserContext = createContext({ user: null });
 
@@ -12,13 +12,13 @@ class UserProvider extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount = async () => {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
       this.setState({ user })
     })
   };
 
   componentWillUnmount = () => {
-    this.unsubscribeFromFirestore();
+    this.unsubscribeFromAuth();
   };
 
   render() {
