@@ -41,12 +41,12 @@ const Example = (props) => {
             <NavItem>
               <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Upcoming</NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Apply</NavLink>
             </NavItem>
             <NavItem>
               <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Apply</NavLink>
-            </NavItem>
+            </NavItem> */}
             {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle className='nav-link' nav caret >
                 Options
