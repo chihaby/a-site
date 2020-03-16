@@ -1,6 +1,4 @@
 import React from 'react';
-
-// import moment from 'moment';
 import { signOut } from '../firebase';
 
 const CurrentUser = ({ displayName, photoURL, email, children }) => {
@@ -11,7 +9,6 @@ const CurrentUser = ({ displayName, photoURL, email, children }) => {
         <div className="CurrentUser--information">
           <h2>{displayName}</h2>
           <p className="email">{email}</p>
-          {/* <p className="created-at">{moment(createdAt).calendar()}</p> */}
         </div>
       </div>
       <div>

@@ -8,8 +8,8 @@ import Navbar from './components/Navbar';
 // import TextInputLarge from './components/TextInputLarge';
 import ModalExampleScrollingContentForBefore from './components/BeforeModal';
 import ModalExampleScrollingContentForAfter from './components/AfterModal';
-import Form from './components/Form';
-
+import Posts from './components/Posts';
+import Authentication from './components/Authentication';
 
 const Container = styled.div`
   text-align: center;
@@ -25,7 +25,8 @@ class App extends React.Component {
             <ModalExampleScrollingContentForBefore />
             <ModalExampleScrollingContentForAfter />
           </Container>
-          <Form />
+          <Authentication />
+          <Posts />
         </div>
       );
   //  }

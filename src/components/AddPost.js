@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { firestore, auth } from '../firebase';
-// import { textarea }
 
 class AddPost extends Component {
   state = { title: '', content: '' };
-
+  
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -62,7 +61,9 @@ class AddPost extends Component {
           </textarea>
           <input className="form" type="submit" value="Create Post" />
         </form>
+
       </div>
+
     );
   }
 }
