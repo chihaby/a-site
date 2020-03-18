@@ -8,11 +8,16 @@ const belongsToCurrentUser = currentUser => {
   return currentUser.uid ;
 }
 
-const Comment = ({ id, content, createdAt, comments, user}) => {
-  console.log(user);
+const Comment = ({ id, content, createdAt, posts, comments, user}) => {
+  
+  console.log(content)
   const currentUser = useContext(UserContext);
-  const commentRef = firestore.doc(`comments/${id}`);
+ 
+  const commentRef = firestore.doc(`posts/${id}/comments/${id}`);
+  console.log(commentRef);
   const remove = () => commentRef.delete();
+
+
 
   return (
     <article className="Comment">
@@ -21,7 +26,7 @@ const Comment = ({ id, content, createdAt, comments, user}) => {
       <span className="Comment--timestamp">{moment(createdAt).calendar()}</span>
 
 
-      {belongsToCurrentUser(currentUser, user) && (
+      {belongsToCurrentUser(currentUser) && (
             <button onClick={remove}>
               Delete
             </button>

@@ -10,7 +10,6 @@ const belongsToCurrentUser = (currentUser, postAuthor) => {
 }
 
 const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
-  console.log(user)
   const currentUser = useContext(UserContext);
   const postRef = firestore.doc(`posts/${id}`);
 
