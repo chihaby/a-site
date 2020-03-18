@@ -4,7 +4,6 @@ import Comments from './Comments';
 import { firestore } from '../firebase';
 import { collectIdsAndDocs } from '../utilities';
 import { withRouter } from 'react-router-dom';
-// import withUser from './withUser';
 
 class PostPage extends Component {
   state = { post: null, comments: [] };
@@ -42,16 +41,14 @@ class PostPage extends Component {
   };
 
   createComment = comment => {
-    // const { user } = this.props;
-    // this.commentsRef.add({ ...comment, user });
-    this.commentsRef.add({...comment});
+    this.commentsRef.add({ ...comment });
   };
 
   render() {
     const { post, comments } = this.state;
     return (
       <section>
-        { post && <Post {...post} />}
+        {post && <Post {...post} />}
         <Comments comments={comments} onCreate={this.createComment} />
       </section>
     );

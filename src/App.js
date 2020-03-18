@@ -11,7 +11,7 @@ import ModalExampleScrollingContentForAfter from './components/AfterModal';
 import Posts from './components/Posts';
 import Authentication from './components/Authentication';
 import PostPage from './components/PostPage';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {  Switch, Link, Route } from 'react-router-dom';
 
 const Container = styled.div`
   text-align: center;
@@ -21,21 +21,22 @@ class App extends React.Component {
   render () {
       return (
         <div>
-          <BrowserRouter>
+
             <Jumbo />
             <Navbar />
             <Container >
               <ModalExampleScrollingContentForBefore />
               <ModalExampleScrollingContentForAfter />
             </Container>
+            <Link to="/">
+              <h1>Posts</h1>
+            </Link>
             <Authentication />
-            <Posts />
             <Switch>
               <Route exact path="/" component={Posts} />
               <Route exact path="/posts/:id" component={PostPage} />
             </Switch>
 
-          </BrowserRouter>
         </div>
       );
   //  }

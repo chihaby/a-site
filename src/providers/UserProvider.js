@@ -18,7 +18,7 @@ class UserProvider extends Component {
   };
 
   componentWillUnmount = () => {
-    this.unsubscribeFromAuth();
+    this.unsubscribeFromFirestore();
   };
 
   render() {

@@ -24,8 +24,8 @@ class AddPost extends Component {
         email,
         photoURL
       },
-      favorites: 0,
-      comments: 0,
+      // favorites: 0,
+      // comments: 0,
       createdAt: new Date(),
     }
 

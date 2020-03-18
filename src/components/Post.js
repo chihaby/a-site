@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-// import moment from 'moment';
+//import moment from 'moment';
 import { firestore } from '../firebase';
 import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,7 @@ const belongsToCurrentUser = (currentUser, postAuthor) => {
 }
 
 const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
+  console.log(user)
   const currentUser = useContext(UserContext);
   const postRef = firestore.doc(`posts/${id}`);
 
@@ -33,10 +34,10 @@ const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
               {stars}
             </p> */}
             <p>
-              <span role="img" aria-label="comments">
+              {/* <span role="img" aria-label="comments">
                 Comments: 
-              </span>
-              {comments}
+              </span> */}
+              {/* {comments} */}
             </p>
             {/* <p>Posted by {user.displayName}</p> */}
             {/* <p>{moment(createdAt).calendar()}</p> */}
@@ -53,20 +54,5 @@ const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
       </article>
   );
 };
-
-// Post.defaultProps = {
-//   title: 'An Incredibly Hot Take',
-//   content:
-//     'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus est aut dolorem, dolor voluptatem assumenda possimus officia blanditiis iusto porro eaque non ab autem nihil! Alias repudiandae itaque quo provident.',
-//   user: {
-//     id: '123',
-//     displayName: 'Bill Murray',
-//     email: 'billmurray@mailinator.com',
-//     photoURL: 'https://www.fillmurray.com/300/300',
-//   },
-//   createdAt: new Date(),
-//   stars: 0,
-//   comments: 0,
-// };
 
 export default Post;
