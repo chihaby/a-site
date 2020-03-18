@@ -7,13 +7,16 @@ import * as serviceWorker from './serviceWorker';
 import App from './App';
 import PostsProvider from './providers/PostsProvider';
 import UserProvider from './providers/UserProvider';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-  <UserProvider>
-    <PostsProvider>
-      <App />
-    </PostsProvider>
-  </UserProvider>, 
+  <Router>
+    <UserProvider>
+      <PostsProvider>
+        <App />
+      </PostsProvider>
+    </UserProvider>
+  </Router>, 
   document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
