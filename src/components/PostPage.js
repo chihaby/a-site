@@ -45,8 +45,8 @@ class PostPage extends Component {
     this.commentsRef.add({ ...comment });
   };
 
-  deleteComment = comment => {
-    this.commentsRef.delete({ ...comment })
+  deleteComment = () => {
+    this.commentsRef.delete();
   }
 
   render() {

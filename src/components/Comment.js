@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { firestore } from '../firebase';
 import moment from 'moment';
 import { UserContext } from '../providers/UserProvider';
 
@@ -8,27 +9,24 @@ const belongsToCurrentUser = currentUser => {
 }
 
 const Comment = ({ id, content, createdAt, posts, comments, user, onDelete}) => {
-
   const currentUser = useContext(UserContext);
- 
-  // const commentRef = firestore.doc(`posts/${id}`).collection('comments');
-  // const remove = () => commentRef.delete();
+  const commentRef = firestore.doc(`posts/${id}`).collection(`comments/`).doc(`${id}`);
+
+  const remove = () => commentRef.delete();
 
   return (
-    <article className="Comment">
+    <div className="Comment">
       <span className="Comment--author">{"User: "}</span>
       <span className="Comment--content">{content}</span>
       <span className="Comment--timestamp">{moment(createdAt).calendar()}</span>
-
-
-      {belongsToCurrentUser(currentUser) && (
-            <button onClick={onDelete}>
-              Delete
-            </button>
-            )}
-
-
-    </article>
+      <span>
+        {belongsToCurrentUser(currentUser) && (
+          <button onClick={remove}>
+            Delete
+          </button>
+        )}
+        </span>
+    </div>
   );
 };
 
