@@ -10,6 +10,7 @@ class PostPage extends Component {
 
   get postId() {
     return this.props.match.params.id;
+
   }
 
   get postRef() {
@@ -44,12 +45,16 @@ class PostPage extends Component {
     this.commentsRef.add({ ...comment });
   };
 
+  deleteComment = comment => {
+    this.commentsRef.delete({ ...comment })
+  }
+
   render() {
     const { post, comments } = this.state;
     return (
       <section>
         {post && <Post {...post} />}
-        <Comments comments={comments} onCreate={this.createComment} />
+        <Comments comments={comments} onCreate={this.createComment} onDelete={this.deleteComment}/>
       </section>
     );
   }
