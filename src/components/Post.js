@@ -3,9 +3,10 @@ import React, { useContext } from 'react';
 import { firestore } from '../firebase';
 import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
-const belongsToCurrentUser = (currentUser) => {
+
+const belongsToCurrentUser = (currentUser, postAuthor) => {
   if(!currentUser) return false;
-  return currentUser.uid ;
+  return currentUser.uid === postAuthor.uid;
 }
 
 const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
@@ -13,6 +14,7 @@ const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
   const postRef = firestore.doc(`posts/${id}`);
 
   const remove = () => postRef.delete();
+  // const update = () => postRef.update({ title, content});
   // const star = () => postRef.update({ stars: stars + 1 });
 
   return (
@@ -42,15 +44,38 @@ const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
           </div>
           <div>
             {/* <button  className="star" onClick={star}>Star</button> */}
-            {belongsToCurrentUser(currentUser) && (
-            <button onClick={remove}>
-              Delete
-            </button>
+            {belongsToCurrentUser(currentUser, user) && (
+              <div>
+                {/* <span>
+                  <button onClick={update}>
+                    Update
+                  </button>
+                </span> */}
+                <span>
+                  <button onClick={remove}>
+                    Delete
+                  </button>
+                </span>
+              </div>
+
             )}
           </div>
         </div>
       </article>
   );
 };
-
+Post.defaultProps = {
+  title: 'An Incredibly Hot Take',
+  content:
+    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus est aut dolorem, dolor voluptatem assumenda possimus officia blanditiis iusto porro eaque non ab autem nihil! Alias repudiandae itaque quo provident.',
+  user: {
+    id: '123',
+    displayName: 'Bill Murray',
+    email: 'billmurray@mailinator.com',
+    photoURL: 'https://www.fillmurray.com/300/300'
+  },
+  createdAt: new Date(),
+  stars: 0,
+  comments: 0
+};
 export default Post;
