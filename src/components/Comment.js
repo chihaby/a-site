@@ -8,12 +8,12 @@ const belongsToCurrentUser = currentUser => {
   return currentUser.uid ;
 }
 
-const Comment = ({ id, content, createdAt, posts, comments, user, onDelete}) => {
+const Comment = ({ id, content, createdAt, postId }) => {
+
   const currentUser = useContext(UserContext);
-  const commentRef = firestore.doc(`posts/${id}`).collection(`comments/`).doc(`${id}`);
-
+  const commentRef = firestore.doc(`posts/${postId}/comments/${id}`);
   const remove = () => commentRef.delete();
-
+  
   return (
     <div className="Comment">
       <span className="Comment--author">{"User: "}</span>
@@ -24,22 +24,10 @@ const Comment = ({ id, content, createdAt, posts, comments, user, onDelete}) => 
           <button onClick={remove}>
             Delete
           </button>
-        )}
+          )}
         </span>
     </div>
   );
 };
-
-// Comment.defaultProps = {
-//   title: 'An Incredibly Hot Take',
-//   content:
-//     'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus est aut dolorem, dolor voluptatem assumenda possimus officia blanditiis iusto porro eaque non ab autem nihil! Alias repudiandae itaque quo provident.',
-//   user: {
-//     displayName: 'Bill Murray',
-//     email: 'billmurray@mailinator.com',
-//     photoURL: 'https://www.fillmurray.com/300/300',
-//   },
-//   createdAt: new Date(),
-// };
 
 export default Comment;

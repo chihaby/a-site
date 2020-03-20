@@ -45,16 +45,12 @@ class PostPage extends Component {
     this.commentsRef.add({ ...comment });
   };
 
-  deleteComment = () => {
-    this.commentsRef.delete();
-  }
-
   render() {
     const { post, comments } = this.state;
     return (
       <section>
         {post && <Post {...post} />}
-        <Comments comments={comments} onCreate={this.createComment} onDelete={this.deleteComment}/>
+        <Comments comments={comments} onCreate={this.createComment} onDelete={this.deleteComment} postId={this.postId}/>
       </section>
     );
   }

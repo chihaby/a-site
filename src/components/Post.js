@@ -3,10 +3,9 @@ import React, { useContext } from 'react';
 import { firestore } from '../firebase';
 import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
-
-const belongsToCurrentUser = (currentUser, postAuthor) => {
+const belongsToCurrentUser = (currentUser) => {
   if(!currentUser) return false;
-  return currentUser.uid === postAuthor.uid;
+  return currentUser.uid ;
 }
 
 const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
@@ -43,7 +42,7 @@ const Post = ({ id, title, content, user, createdAt, stars, comments }) => {
           </div>
           <div>
             {/* <button  className="star" onClick={star}>Star</button> */}
-            {belongsToCurrentUser(currentUser, user) && (
+            {belongsToCurrentUser(currentUser) && (
             <button onClick={remove}>
               Delete
             </button>
