@@ -17,7 +17,7 @@ class ConfirmModal extends Component {
         <Confirm
           open={open}
           onCancel={this.handleCancel}
-          onConfirm={this.props.remove}
+          onConfirm={this.props.remove || this.props.del} 
         />
       </div>
     )

@@ -3,9 +3,9 @@ import { firestore } from '../firebase';
 import moment from 'moment';
 import { UserContext } from '../providers/UserProvider';
 
-const belongsToCurrentUser = currentUser => {
+const belongsToCurrentUser = (currentUser) => {
   if(!currentUser) return false;
-  return currentUser.uid ;
+  return currentUser.uid;
 }
 
 const Comment = ({ id, content, createdAt, postId }) => {
