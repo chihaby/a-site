@@ -1,11 +1,4 @@
-Add hover color yellow on navbar links
-cut jumbo short
-cut navbar
-arrow left for before her 
-arrow right for after her
 https://www.youtube.com/watch?v=vmLaZafaw9E&t=22s
-make textarea on AddPost responsive
-google single user 
 edit post textarea
 There is an option for google auth signin annonymously
 send email of post copy when posted
@@ -16,6 +9,8 @@ Note that the development build is not optimized.
 To create a production build, use npm run build.
 
 add comment ui form  
-post chronological order
 I can make a second ConfirmModal component for comment delete button
-sort posts and comments in descending order
+sort comments in descending order
+hide f words
+
+NPM RUN BUILD FOR DEPLOYMENT
