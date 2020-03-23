@@ -18,3 +18,4 @@ To create a production build, use npm run build.
 add comment ui form  
 post chronological order
 I can make a second ConfirmModal component for comment delete button
+sort posts and comments in descending order

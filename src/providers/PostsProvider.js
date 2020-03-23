@@ -12,7 +12,7 @@ class PostsProvider extends Component {
   unsubscribeFromFirestore = null;
 
   componentDidMount = async () => {
-    this.unsubscribeFromFirestore = firestore.collection('posts').onSnapshot(snapshot => {
+    this.unsubscribeFromFirestore = firestore.collection('posts').orderBy('createdAt', 'desc').onSnapshot(snapshot => {
       const posts = snapshot.docs.map(collectIdsAndDocs);
       this.setState({ posts });
     });

@@ -30,7 +30,7 @@ class PostPage extends Component {
       this.setState({ post });
     });
 
-    this.unsubscribeFromComments = this.commentsRef.onSnapshot(snapshot => {
+    this.unsubscribeFromComments = this.commentsRef.orderBy("content", "desc").onSnapshot(snapshot => {
       const comments = snapshot.docs.map(collectIdsAndDocs);
       this.setState({ comments });
     });
