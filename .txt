@@ -13,4 +13,5 @@ I can make a second ConfirmModal component for comment delete button
 sort comments in descending order
 hide f words
 
-NPM RUN BUILD FOR DEPLOYMENT
+npm run deploy FOR DEPLOYMENT
+  
