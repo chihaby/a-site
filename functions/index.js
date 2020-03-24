@@ -22,7 +22,7 @@ exports.sanitizeContent = functions.firestore
 
     if (content && !sanitized) {
       return change.after.ref.update({
-        content: content.replace(/fuck/g, '****'),
+        content: content.replace(/fuck|Fuck/g, '****'),
         sanitize: true
       });
     }
