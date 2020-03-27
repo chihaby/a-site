@@ -126,3 +126,11 @@
   margin-right: auto;
   text-align: center
 }
+
+.slides {
+  margin: auto;
+  box-sizing: border-box;
+  position: relative;
+  text-align: justify;
+
+}

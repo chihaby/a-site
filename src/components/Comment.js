@@ -22,7 +22,7 @@ const Comment = ({ id, content, createdAt, postId }) => {
       <span>
         {belongsToCurrentUser(currentUser) && (
           <button onClick={remove}>
-            Delete
+            <span role="img" aria-label="Delete"> ❌ </span>
           </button>
           )}
         </span>

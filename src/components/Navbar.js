@@ -7,10 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  // UncontrolledDropdown,
-  // DropdownToggle,
-  // DropdownMenu,
-  // DropdownItem,
   NavbarText
 } from 'reactstrap';
 
@@ -22,13 +18,10 @@ const Example = (props) => {
   return (
     <div className="Nav-background">
       <Navbar light expand="md">
-        <NavbarBrand className='nav-link' href="/" >What we do</NavbarBrand>
+        <NavbarBrand className='nav-link' href="/" >Home</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar style={{margin: "auto"}}>
-            {/* <NavItem >
-              <NavLink className='nav-link' href="/components/" >What We Do</NavLink>
-            </NavItem> */}
             <NavItem >
               <NavLink className='nav-link' href="/components/" >Interviews</NavLink>
             </NavItem>
@@ -41,29 +34,6 @@ const Example = (props) => {
             <NavItem>
               <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Upcoming</NavLink>
             </NavItem>
-            {/* <NavItem>
-              <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Apply</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Apply</NavLink>
-            </NavItem> */}
-            {/* <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle className='nav-link' nav caret >
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Apply
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown> */}
           </Nav>
           <NavbarText className="button-hope">Donate</NavbarText>
         </Collapse>

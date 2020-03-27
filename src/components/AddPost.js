@@ -57,7 +57,7 @@ class AddPost extends Component {
             onChange={this.handleChange}
             >
           </textarea>
-          <input className="form" type="submit" value="Create Post" />
+          <input className="ui primary button" type="submit" value="Create Post" />
         </form>
 
       </div>

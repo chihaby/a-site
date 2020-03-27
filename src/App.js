@@ -1,11 +1,8 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components';
-// import { Button } from 'reactstrap';
 import Jumbo from './components/Jumbotron';
 import Navbar from './components/Navbar';
-// import Topic  from './components/Topic';
-// import TextInputLarge from './components/TextInputLarge';
 import ModalExampleScrollingContentForBefore from './components/BeforeModal';
 import ModalExampleScrollingContentForAfter from './components/AfterModal';
 import Posts from './components/Posts';
@@ -27,19 +24,17 @@ class App extends React.Component {
             <Container >
               <ModalExampleScrollingContentForBefore />
               <ModalExampleScrollingContentForAfter />
+              <Link to="/">
+                <h1 className="ui header" >Daily Posts</h1>
+              </Link>
+              <Authentication />
+              <Switch>
+                <Route exact path="/" component={Posts} />
+                <Route exact path="/posts/:id" component={PostPage} />
+              </Switch>
             </Container>
-            <Link to="/">
-              <h1>Posts</h1>
-            </Link>
-            <Authentication />
-            <Switch>
-              <Route exact path="/" component={Posts} />
-              <Route exact path="/posts/:id" component={PostPage} />
-            </Switch>
-
         </div>
       );
-  //  }
   }
 }
 
