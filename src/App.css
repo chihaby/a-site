@@ -128,9 +128,25 @@
 }
 
 .slides {
-  margin: auto;
+  margin: 25px 10px;
   box-sizing: border-box;
   position: relative;
   text-align: justify;
 
+}
+
+.comments {
+  margin: 25px 10px;
+  padding: 20px;
+  text-align: left;
+}
+
+.comment {
+  margin: 25px 10px;
+  text-align: left;
+}
+
+li {
+  float: left;
+  margin: 0px 10px;
 }

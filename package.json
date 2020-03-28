@@ -9,6 +9,7 @@
     "bootstrap": "^4.4.1",
     "firebase": "^7.10.0",
     "lodash": "^4.17.15",
+    "mdbreact": "^4.25.4",
     "moment": "^2.24.0",
     "react": "^16.13.0",
     "react-border-wrapper": "^1.0.3",

@@ -47,7 +47,6 @@ class AddPost extends Component {
           />
 
           <textarea 
-            className='form'
             type="text" 
             rows="7" 
             cols="60" 

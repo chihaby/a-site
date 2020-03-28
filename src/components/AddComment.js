@@ -18,7 +18,9 @@ class AddComment extends Component {
     const { content } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="AddComment">
-        <input
+        <textarea
+          rows="4" 
+          cols="60" 
           type="text"
           name="content"
           placeholder="Comment"

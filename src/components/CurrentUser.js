@@ -13,7 +13,8 @@ const CurrentUser = ({ displayName, photoURL, email, children }) => {
       </div>
       <div>
         <div>{children}</div>
-        <button onClick={signOut}>Sign Out </button>
+        <button onClick={signOut} >Sign Out </button>
+        <i class="fas fa-sign-out-alt">signout</i>
       </div>
     </section>
   );

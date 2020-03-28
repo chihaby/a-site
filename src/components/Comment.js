@@ -15,7 +15,7 @@ const Comment = ({ id, content, createdAt, postId }) => {
   const remove = () => commentRef.delete();
   
   return (
-    <div className="Comment">
+    <div className="comment">
       <span className="Comment--author">{"User :  "}</span>
       <span className="Comment--content">{content}</span>
       {/* <span className="Comment--timestamp">{moment(createdAt).calendar()}</span> */}
