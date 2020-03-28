@@ -8,7 +8,7 @@ import ModalExampleScrollingContentForAfter from './components/AfterModal';
 import Posts from './components/Posts';
 import Authentication from './components/Authentication';
 import PostPage from './components/PostPage';
-import FooterPage from './components/Footer';
+import { Footer } from './components/Footer';
 import {  Switch, Link, Route } from 'react-router-dom';
 
 const Container = styled.div`
@@ -34,7 +34,7 @@ class App extends React.Component {
                 <Route exact path="/posts/:id" component={PostPage} />
               </Switch>
             </Container>
-            <FooterPage />
+            <Footer />
         </div>
       );
   }
