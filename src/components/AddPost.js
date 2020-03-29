@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { firestore, auth } from '../firebase';
-import { Button, Checkbox, Form, TextArea  } from 'semantic-ui-react';
+import { Button, Form, TextArea  } from 'semantic-ui-react';
 class AddPost extends Component {
   state = { title: '', content: '' };
   

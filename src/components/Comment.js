@@ -16,8 +16,8 @@ const Comment = ({ id, content, createdAt, postId }) => {
   
   return (
     <div className="comment">
-      <span className="Comment--author">{"User :  "}</span>
-      <span className="Comment--content">{content}</span>
+      <span className="user">{"User :  "}</span>
+      <span>{content}</span>
       {/* <span className="Comment--timestamp">{moment(createdAt).calendar()}</span> */}
       <span>
         {belongsToCurrentUser(currentUser) && (

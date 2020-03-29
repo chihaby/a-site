@@ -157,3 +157,8 @@
   position: relative;
   bottom: 0;
 }
+
+.user {
+  font-weight: 550;
+  color: rgb(115, 97, 218);
+}
