@@ -1,5 +1,6 @@
 import React from 'react';
 import { signOut } from '../firebase';
+import { Button } from 'semantic-ui-react';
 
 const CurrentUser = ({ displayName, photoURL, email, children }) => {
   return (
@@ -13,8 +14,7 @@ const CurrentUser = ({ displayName, photoURL, email, children }) => {
       </div>
       <div>
         <div>{children}</div>
-        <button onClick={signOut} >Sign Out </button>
-        <i class="fas fa-sign-out-alt">signout</i>
+        <Button color='orange' onClick={signOut} >Sign Out </Button>
       </div>
     </section>
   );

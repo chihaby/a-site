@@ -48,7 +48,7 @@ class PostPage extends Component {
   render() {
     const { post, comments } = this.state;
     return (
-      <section className="slides">
+      <section className="slides body">
         {post && <Post {...post} />}
         <Comments comments={comments} onCreate={this.createComment} onDelete={this.deleteComment} postId={this.postId}/>
       </section>

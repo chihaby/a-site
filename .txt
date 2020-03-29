@@ -12,6 +12,7 @@ add comment ui form
 I can make a second ConfirmModal component for comment delete button
 sort comments in descending order
 hide f words
+add email subscription
+read more on comments
 
 npm run deploy FOR DEPLOYMENT
-  

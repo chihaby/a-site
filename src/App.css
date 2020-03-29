@@ -38,18 +38,18 @@
   }
 }
 
+
+
 .Jumbo-background {
-  background: #43C6AC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url("./images/marble.jpg");
+  /* background-repeat: space; */
   margin-bottom: 0 !important;
-  margin-top: -3%;
+  margin-top: -5%;
 }
 
 .photo-bio {
   border: 5px solid rgb(127,134,140);
   border-radius: 50%;
-  /* padding: 5px; */
   width: 200px;
   height: 200px;
   float: left;
@@ -71,8 +71,6 @@
 }
 
 .Nav-background {
-  background-color: rgb(127,134,140);
-
   color: white;
 }
 
@@ -80,17 +78,20 @@
   color: 'black';
   background-color: white;
   margin: 15px;
-  /* width: 150px; */
-  border-radius: 5px;
   text-align: center;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border: 1px solid #555555;
 }
 
 .topic-header {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 15px;
-  text-size-adjust: auto;
-  
+  text-size-adjust: auto; 
 }
 
 .buttons {
@@ -139,6 +140,7 @@
   margin: 25px 10px;
   padding: 20px;
   text-align: left;
+  background-color: rgb(250, 250, 250);
 }
 
 .comment {
@@ -150,6 +152,8 @@
   margin-top: 35px;
   transition: 200ms;
   box-shadow: 0 0 2rem gray;
-  height: 60px;
+  height: 100%;
   text-align: center;
+  position: relative;
+  bottom: 0;
 }

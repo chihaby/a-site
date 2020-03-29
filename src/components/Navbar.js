@@ -3,7 +3,7 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
+  // NavbarBrand,
   Nav,
   NavItem,
   NavLink,
@@ -18,21 +18,21 @@ const Example = (props) => {
   return (
     <div className="Nav-background">
       <Navbar light expand="md">
-        <NavbarBrand className='nav-link' href="/" >Home</NavbarBrand>
+        {/* <NavbarBrand className='nav-link' href="/" >Home</NavbarBrand> */}
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar style={{margin: "auto"}}>
+          <Nav className="mr-auto" navbar style={{margin: "auto", float: 'right'}}>
             <NavItem >
-              <NavLink className='nav-link' href="/components/" >Interviews</NavLink>
+              <NavLink className='nav-link' href="/components/" >Family Support</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className='nav-link' href="/components/" >Membership</NavLink>
+              <NavLink className='nav-link' href="/components/" >Shop</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Shop</NavLink>
+              <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Apply</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Upcoming</NavLink>
+              <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Blog</NavLink>
             </NavItem>
           </Nav>
           <NavbarText className="button-hope">Donate</NavbarText>

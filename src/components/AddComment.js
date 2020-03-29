@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Form } from 'semantic-ui-react';
 
 class AddComment extends Component {
   state = { content: '' };
@@ -18,16 +19,20 @@ class AddComment extends Component {
     const { content } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="AddComment">
-        <textarea
-          rows="4" 
-          cols="60" 
-          type="text"
-          name="content"
-          placeholder="Comment"
-          value={content}
-          onChange={this.handleChange}
-        />
-        <input className="create" type="submit" value="Create Comment" />
+          <Form>
+                <Form.Field>
+                  <label>Comment</label>
+                  <input 
+                    name="content"
+                    type="text"
+                    placeholder='Comment' 
+                    value={content}
+                    onChange={this.handleChange}
+                  />
+                </Form.Field>
+              <Button type='submit'>Add Comment</Button>
+            </Form>
+        
       </form>
     );
   }

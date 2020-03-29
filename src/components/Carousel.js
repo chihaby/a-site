@@ -15,7 +15,8 @@ const Carousel = () =>   {
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
-    };
+  }
+
     return (
       <Slider {...settings} >
         {posts.map(post => (
@@ -26,8 +27,6 @@ const Carousel = () =>   {
       </Slider>
       
     );
-  
-
 }
 
 export default Carousel;

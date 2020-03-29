@@ -13,18 +13,48 @@ const Posts = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
+    speed: 1000,
     slidesToScroll: 1,
     // autoplay: true,
     // lazyLoad: true,
     centerMode: true,
     adaptiveHeight: true,
     // fade: true,
-    arrows: true,
+    // arrows: true,
     // autoplaySpeed: 50000,
-    className: 'slides'
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 1,
+    className: "center",
+    arrows: true,
+    initialSlide: 0,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            initialSlide: 1,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
   };
 
   return (

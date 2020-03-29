@@ -2,18 +2,23 @@ import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import { signInWithGoogle } from '../firebase';
 import photo from '../images/andrea.JPG';
+import Navbar from './Navbar';
 
 const Jumbo = (props) => {
   return (
     <div>
       <Jumbotron className='Jumbo-background'>
-        <img className="photo-bio" src={photo} alt="avatar"/>
-        <h3 className="display-3">Andrea Chihaby</h3>
-        <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <div>
         <p className="lead">
-          <Button onClick={signInWithGoogle} color="primary">Sign In</Button>
+          <Button onClick={signInWithGoogle} style={{float: 'right'}} color="primary">Login</Button>
         </p>
+        <img className="photo-bio" src={photo} alt="avatar"/>
+        <h3 className="display-3">Athenation</h3>
+        <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+        </div>
+        <div >
+          <Navbar />
+        </div>
       </Jumbotron>
     </div>
   );
