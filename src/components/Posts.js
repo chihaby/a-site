@@ -13,21 +13,23 @@ const Posts = () => {
 
   const settings = {
     dots: true,
-    speed: 1000,
+    speed: 500,
+    width: "100%",
     slidesToScroll: 1,
     // autoplay: true,
     // lazyLoad: true,
-    centerMode: true,
+    // centerMode: true,
     adaptiveHeight: true,
     // fade: true,
     // arrows: true,
     // autoplaySpeed: 50000,
-    infinite: true,
+    infinite: false,
     centerPadding: "60px",
     slidesToShow: 1,
     className: "center",
+    loop: false,
     arrows: true,
-    initialSlide: 0,
+    initialSlide: 1,
       responsive: [
         {
           breakpoint: 1024,
