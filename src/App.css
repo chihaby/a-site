@@ -99,12 +99,8 @@
   text-align: center
 }
 
-.slides {
-  margin: 25px 10px;
-  box-sizing: border-box;
-  position: relative;
-  text-align: justify;
-
+.post-title {
+  margin-bottom: 15px;
 }
 
 .comments {
@@ -137,3 +133,15 @@
 .post-title {
   margin-top: 25px;
 } 
+
+.slides {
+  /* position: relative; */
+  text-align: justify;
+  float: left;
+}
+
+.content-img {
+  float: left;
+  margin: 0px 25px 25px 0px;
+}
+
