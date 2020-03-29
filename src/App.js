@@ -7,7 +7,7 @@ import Jumbo from './components/Jumbotron';
 import Posts from './components/Posts';
 import Authentication from './components/Authentication';
 import PostPage from './components/PostPage';
-import { Footer } from './components/Footer';
+// import { Footer } from './components/Footer';
 import {  Switch, Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 
@@ -15,7 +15,8 @@ class App extends React.Component {
   render () {
       return (
         <div>
-            <Jumbo />
+        <Jumbo />
+          <div style={{backgroundColor: "#dfebe9" }}>
               {/* <Link to="/" style={{textAlign: 'center', margin: '15px'}}>
                 <h1 className="ui header"  >Daily Posts</h1>
               </Link> */}
@@ -26,7 +27,8 @@ class App extends React.Component {
                     <Route exact path="/posts/:id" component={PostPage} />
                   </Switch>
               </Container>
-            <Footer />
+            {/* <Footer /> */}
+          </div>
         </div>
       );
   }

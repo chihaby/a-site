@@ -7,9 +7,9 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText
+  // NavbarText
 } from 'reactstrap';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ const Example = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="Nav-background">
+    <div>
       <Navbar light expand="md">
         <NavbarBrand className='nav-link' href="/" >
           <Icon name='home' size='large' color='blue'/>
@@ -38,9 +38,12 @@ const Example = (props) => {
               <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Blog</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText className="button-hope">Donate</NavbarText>
+          {/* <NavbarText className="button-hope">Donate</NavbarText> */}
+          <Button color='orange'>Donate</Button>
         </Collapse>
+   
       </Navbar>
+
     </div>
   );
 }
