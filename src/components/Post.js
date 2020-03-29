@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { firestore } from '../firebase';
 import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
+import { Header } from 'semantic-ui-react'
 
 const belongsToCurrentUser = (currentUser, postAuthor) => {
   if(!currentUser) return false;
@@ -18,11 +19,11 @@ const Post = ({ id, title, content, user }) => {
 
   return (
       <>
-        <div>
+        <div className="post-title">
           <Link to={`/posts/${id}`}>
-            <h3>{title}</h3>
+            <Header as='h2' color='violet' textAlign='center' >{title}</Header>
           </Link>
-        </div><br />
+        </div>
         <div className="slides">{content}</div>
         <div style={{textAlign: 'center'}}>
           <div>

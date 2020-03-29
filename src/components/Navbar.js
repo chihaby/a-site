@@ -3,12 +3,13 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  // NavbarBrand,
+  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
   NavbarText
 } from 'reactstrap';
+import { Icon } from 'semantic-ui-react';
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,9 @@ const Example = (props) => {
   return (
     <div className="Nav-background">
       <Navbar light expand="md">
-        {/* <NavbarBrand className='nav-link' href="/" >Home</NavbarBrand> */}
+        <NavbarBrand className='nav-link' href="/" >
+          <Icon name='home' size='large' color='blue'/>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar style={{margin: "auto", float: 'right'}}>

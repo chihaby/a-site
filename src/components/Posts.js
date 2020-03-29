@@ -29,12 +29,12 @@ const Posts = () => {
     className: "center",
     loop: false,
     arrows: true,
-    initialSlide: 1,
+    initialSlide: 0,
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            initialSlide: 1,
+            initialSlide: 0,
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
@@ -46,7 +46,7 @@ const Posts = () => {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            initialSlide: 1
+            initialSlide: 0
           }
         },
         {
