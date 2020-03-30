@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { firestore, auth } from '../firebase';
 import { Button, Form, TextArea  } from 'semantic-ui-react';
 class AddPost extends Component {
-  state = { title: '', content: '' };
+  state = { title: '', preview:'', content: '' };
   
   handleChange = event => {
     const { name, value } = event.target;
@@ -12,11 +12,12 @@ class AddPost extends Component {
   handleSubmit = event => {
     event.preventDefault();
     
-    const { title, content } = this.state;
+    const { title, preview, content } = this.state;
     const { uid, displayName, email, photoURL } = auth.currentUser || {};
 
     const post = {
       title,
+      preview,
       content,
         user: {
         uid,
@@ -29,11 +30,11 @@ class AddPost extends Component {
 
     firestore.collection('posts').add(post);
 
-    this.setState({ title: '', content: '' });
+    this.setState({ title: '', preview: '', content: '' });
   };
 
   render() {
-    const { title, content } = this.state;
+    const { title, preview, content } = this.state;
     return (
       <div style={{textAlign: 'center' }}>
         <Form onSubmit={this.handleSubmit}>
@@ -50,7 +51,19 @@ class AddPost extends Component {
           <Form.Field>
             <TextArea 
               type="text" 
-              rows="7" 
+              rows="5" 
+              cols="60" 
+              name="preview"
+              placeholder="preview"
+              value={preview} 
+              onChange={this.handleChange}
+              >
+            </TextArea>
+          </Form.Field>
+          <Form.Field>
+            <TextArea 
+              type="text" 
+              rows="10" 
               cols="60" 
               name="content"
               placeholder="Tell us more"
@@ -61,9 +74,7 @@ class AddPost extends Component {
           </Form.Field>
           <Button className="ui primary button" type="submit" value="Create Post">Create Post</Button>
         </Form>
-
       </div>
-
     );
   }
 }

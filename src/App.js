@@ -16,7 +16,7 @@ class App extends React.Component {
       return (
         <div>
         <Jumbo />
-          <div style={{backgroundColor: "#dfebe9" }}>
+          <div className="main-bg">
               {/* <Link to="/" style={{textAlign: 'center', margin: '15px'}}>
                 <h1 className="ui header"  >Daily Posts</h1>
               </Link> */}

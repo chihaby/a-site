@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import Post from './Post';
-// import AddPost from './AddPost';
 import { PostsContext } from '../providers/PostsProvider';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,13 +15,7 @@ const Posts = () => {
     speed: 500,
     width: "100%",
     slidesToScroll: 1,
-    // autoplay: true,
-    // lazyLoad: true,
-    // centerMode: true,
     adaptiveHeight: true,
-    // fade: true,
-    // arrows: true,
-    // autoplaySpeed: 50000,
     infinite: false,
     centerPadding: "60px",
     slidesToShow: 1,

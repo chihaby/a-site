@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Post from './Post';
+// import Post from './Post';
+import PostContent from './PostContent';
 import Comments from './Comments';
 import { firestore } from '../firebase';
 import { collectIdsAndDocs } from '../utilities';
@@ -49,7 +50,7 @@ class PostPage extends Component {
     const { post, comments } = this.state;
     return (
       <section className="slides body">
-        {post && <Post {...post} />}
+        {post && <PostContent {...post} />}
         <Comments comments={comments} onCreate={this.createComment} onDelete={this.deleteComment} postId={this.postId}/>
       </section>
     );

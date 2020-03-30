@@ -139,3 +139,11 @@
   float: left;
   margin: 0px 25px 25px 0px;
 }
+
+.content-div {
+  font-size: 18px;
+}
+
+.main-bg {
+  background-color: #dfebe9;
+}
