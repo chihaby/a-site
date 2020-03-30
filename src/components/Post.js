@@ -19,14 +19,13 @@ const Post = ({ id, title, content, user }) => {
 
   return (
       <>
-        <div className="post-title">
+        <div className="post-title" >
           <Link to={`/posts/${id}`}>
             <Header as='h2' color='violet' textAlign='center' >{title}</Header>
           </Link>
         </div>
         <div className="slides">
           <div className="content-div">
-            {/* <div className="content-img">Image</div> */}
             <Image src='https://react.semantic-ui.com/images/wireframe/white-image.png' size='large' bordered className="content-img"/>
               {content}
             </div>

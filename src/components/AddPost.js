@@ -35,7 +35,7 @@ class AddPost extends Component {
   render() {
     const { title, content } = this.state;
     return (
-      <div style={{textAlign: 'center'}}>
+      <div style={{textAlign: 'center' }}>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
             <input 
