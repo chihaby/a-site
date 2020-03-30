@@ -7,6 +7,7 @@ import Jumbo from './components/Jumbotron';
 import Posts from './components/Posts';
 import Authentication from './components/Authentication';
 import PostPage from './components/PostPage';
+// import AddPost from './components/AddPost';
 // import { Footer } from './components/Footer';
 import {  Switch, Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';

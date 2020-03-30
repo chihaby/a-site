@@ -1,21 +1,9 @@
 import React from 'react';
-// import { firestore } from '../firebase';
-// import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
-import { Header, Image, Segment } from 'semantic-ui-react'
+import { Header, Image, Segment, Button } from 'semantic-ui-react'
 
-// const belongsToCurrentUser = (currentUser, postAuthor) => {
-//   if(!currentUser) return false;
-//   return currentUser.uid === postAuthor.uid;
-// }
-
-const Post = ({ id, title, preview }) => {
-  // const currentUser = useContext(UserContext);
-  // const postRef = firestore.doc(`posts/${id}`);
-
-  // const remove = () => postRef.delete();
-  // const update = () => postRef.update({ title, content});
-
+const Post = ({ id, title, preview, url }) => {
+console.log(url)
   return (
       <>
         <Segment color='teal' >
@@ -24,20 +12,14 @@ const Post = ({ id, title, preview }) => {
           </Link>
         </Segment>
         <div className="slides">
-          <div className="content-div">
-            <Image src='https://react.semantic-ui.com/images/wireframe/white-image.png' size='large' bordered className="content-img"/>
-            {preview}
+          <div className="preview">
+            <Image src={url} size='large' bordered className="content-img"/>
+            {preview} <br />
+            <Link to={`/posts/${id}`}>
+              <Button color="violet" className="read-more">Read more</Button>
+            </Link>
           </div>
         </div>
-        {/* <div style={{textAlign: 'center'}}>
-          <div>
-            {belongsToCurrentUser(currentUser, user) && (
-              <div>
-                <button className="ui negative button" onClick={remove}>Delete</button>
-              </div>
-            )}
-          </div>
-        </div> */}
       </>
   );
 };

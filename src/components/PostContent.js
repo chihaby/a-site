@@ -9,7 +9,8 @@ const belongsToCurrentUser = (currentUser, postAuthor) => {
   return currentUser.uid === postAuthor.uid;
 }
 
-const PostContent = ({ id, title, content, user }) => {
+const PostContent = ({ id, title, content, url, user }) => {
+  console.log(url)
   const currentUser = useContext(UserContext);
   const postRef = firestore.doc(`posts/${id}`);
 
@@ -25,7 +26,7 @@ const PostContent = ({ id, title, content, user }) => {
         </Segment>
         <div className="slides">
           <div className="content-div">
-            <Image src='https://react.semantic-ui.com/images/wireframe/white-image.png' size='large' bordered className="content-img"/>
+            <Image src={url}/>
             {content}
           </div>
         </div>

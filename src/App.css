@@ -140,10 +140,18 @@
   margin: 0px 25px 25px 0px;
 }
 
-.content-div {
-  font-size: 18px;
+.preview {
+  font-size: 17px;
+  line-height: 200%;
 }
 
 .main-bg {
   background-color: #dfebe9;
+}
+
+.read-more {
+  background-color: rgb(216, 178, 182);
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  float: right;
 }

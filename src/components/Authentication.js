@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-
 import CurrentUser from './CurrentUser';
 import SignIn from './SignIn';
 import { UserContext } from '../providers/UserProvider';
 import AddPost from './AddPost';
+// import { Welcome } from './Welcome';
 
 const Authentication = ({ loading }) => {
 
