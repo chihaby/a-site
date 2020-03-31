@@ -14,5 +14,6 @@ sort comments in descending order
 hide f words
 add email subscription
 read more on comments
+If no pic display message
 
 npm run deploy FOR DEPLOYMENT

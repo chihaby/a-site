@@ -3,14 +3,18 @@ import CurrentUser from './CurrentUser';
 import SignIn from './SignIn';
 import { UserContext } from '../providers/UserProvider';
 import AddPost from './AddPost';
-// import { Welcome } from './Welcome';
+import AddImage from './AddImage';
 
 const Authentication = ({ loading }) => {
 
   const user = useContext(UserContext);
   if (loading) return null;
 
-  return <div>{user ? <div><CurrentUser {...user}/><AddPost /></div> : <SignIn />}</div>;
+  return <div>{user ? <div>
+        <CurrentUser {...user}/>
+        <AddImage />
+        <AddPost />
+      </div> : <SignIn />}</div>;
 };
 
 export default Authentication;

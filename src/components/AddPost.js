@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { firestore, auth } from '../firebase';
-import PhotoUpload from './PhotoUpload';
 import { Button, Form, TextArea, Message  } from 'semantic-ui-react';
 
 
@@ -44,7 +43,6 @@ class AddPost extends Component {
           <Message color='brown' >Welcome Andrea</Message>
         </div>
         <div style={{textAlign: 'center' }}>
-          <PhotoUpload />
         </div>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Post from './Post';
 import { storage } from '../firebase';
-import { Button, Icon } from 'semantic-ui-react';
+import { Button, Icon, Image } from 'semantic-ui-react';
 
-class ImageUpload extends Component {
+
+class AddImage extends Component {
   state = {
       image: null,
       url: "",
@@ -15,6 +15,7 @@ class ImageUpload extends Component {
       const image = e.target.files[0];
       this.setState(() => ({ image }));
     }
+    console.log("image: ",this.state.image)
   };
 
   handleUpload = () => {
@@ -42,10 +43,9 @@ class ImageUpload extends Component {
           .then(url => {
             this.setState({ url });
           });
-
+          console.log("url: ",this.state.url)
       }
     );
- 
   };
   render() {
     const { url } = this.state;
@@ -60,6 +60,9 @@ class ImageUpload extends Component {
             <Icon name='image' size='large' color='blue'/>
             <input type="file" onChange={this.handleChange} />
           </div>
+          <div>
+            <input type="text" />
+          </div>
         </div> 
         <br />
         <Button color='green'
@@ -68,14 +71,13 @@ class ImageUpload extends Component {
           Upload
         </Button>
         <br />
-        <img
+        <Image
           src={url}
           alt="Uploaded Images"
         />
-        <Post url={this.url} />
       </div>
     );
   }
 }
 
-export default ImageUpload;
+export default AddImage;

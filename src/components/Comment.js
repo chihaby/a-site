@@ -8,7 +8,7 @@ const belongsToCurrentUser = (currentUser) => {
   return currentUser.uid;
 }
 
-const Comment = ({ id, content, createdAt, postId }) => {
+const Comment = ({ id, content, postId }) => {
 
   const currentUser = useContext(UserContext);
   const commentRef = firestore.doc(`posts/${postId}/comments/${id}`);

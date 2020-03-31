@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Icon } from 'semantic-ui-react';
 
 class AddComment extends Component {
   state = { content: '' };
@@ -21,7 +21,10 @@ class AddComment extends Component {
       <form onSubmit={this.handleSubmit} className="AddComment">
           <Form>
                 <Form.Field>
-                  <label>Comment</label>
+                <Icon name='comments'/>
+                  <span>
+                    <label>Comment</label>
+                  </span>
                   <input 
                     name="content"
                     type="text"

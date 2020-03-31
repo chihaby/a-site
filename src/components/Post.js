@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Header, Image, Segment, Button } from 'semantic-ui-react'
+import { Header, Image, Segment, Button } from 'semantic-ui-react';
 
-const Post = ({ id, title, preview, url }) => {
-console.log(url)
+const Post = ({ id, title, preview, url, image }) => {
+console.log("url: ", url);
+console.log("image: ", image)
+
   return (
+
       <>
         <Segment color='teal' >
           <Link to={`/posts/${id}`}>
@@ -13,12 +16,13 @@ console.log(url)
         </Segment>
         <div className="slides">
           <div className="preview">
-            <Image src={url} size='large' bordered className="content-img"/>
+            <Image src={url} alt="img" size='large' bordered className="content-img"/>
             {preview} <br />
             <Link to={`/posts/${id}`}>
               <Button color="violet" className="read-more">Read more</Button>
             </Link>
           </div>
+
         </div>
       </>
   );
