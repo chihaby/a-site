@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Header, Image, Segment, Button } from 'semantic-ui-react';
 
 const Post = ({ id, title, preview, url, image }) => {
-console.log("url: ", url);
+console.log("url: ");
 console.log("image: ", image)
 
   return (
@@ -16,7 +16,7 @@ console.log("image: ", image)
         </Segment>
         <div className="slides">
           <div className="preview">
-            <Image src={url} alt="img" size='large' bordered className="content-img"/>
+            <Image src={url} alt="imaaaag" size='large' bordered className="content-img"/>
             {preview} <br />
             <Link to={`/posts/${id}`}>
               <Button color="violet" className="read-more">Read more</Button>

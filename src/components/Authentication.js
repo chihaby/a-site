@@ -3,7 +3,8 @@ import CurrentUser from './CurrentUser';
 import SignIn from './SignIn';
 import { UserContext } from '../providers/UserProvider';
 import AddPost from './AddPost';
-import AddImage from './AddImage';
+// import AddImage from './AddImage';
+import { Advertisement } from 'semantic-ui-react';
 
 const Authentication = ({ loading }) => {
 
@@ -12,7 +13,10 @@ const Authentication = ({ loading }) => {
 
   return <div>{user ? <div>
         <CurrentUser {...user}/>
-        <AddImage />
+
+        <Advertisement unit='panorama' test='Welcome Andrea' />
+{/* 
+        <AddImage /> */}
         <AddPost />
       </div> : <SignIn />}</div>;
 };
