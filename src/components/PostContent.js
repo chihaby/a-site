@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { firestore } from '../firebase';
 import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
-import { Header, Image, Segment } from 'semantic-ui-react'
+import { Header, Image, Segment } from 'semantic-ui-react';
+import InnerNavbar from './InnerNavbar';
 
 const belongsToCurrentUser = (currentUser) => {
   if(!currentUser) return false;
@@ -19,6 +20,7 @@ const PostContent = ({ id, title, content, url, user }) => {
 
   return (
       <>
+      <InnerNavbar />
         <Segment color='teal' >
           <Link to={`/posts/${id}`}>
             <Header as='h2' color='violet' textAlign='center' >{title}</Header>
