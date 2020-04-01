@@ -110,16 +110,6 @@
   text-align: left;
 }
 
-/* .footer {
-  margin-top: 35px;
-  transition: 200ms;
-  box-shadow: 0 0 2rem gray;
-  height: 100%;
-  text-align: center;
-  position: relative;
-  bottom: 0; 
-} */
-
 .user {
   font-weight: 550;
   color: rgb(115, 97, 218);
@@ -130,20 +120,30 @@
 } 
 
 .slides {
-  /* position: relative; */
+  background-color: white;
   text-align: justify;
   float: left;
+  margin-top: 100px;
 }
 
-.content-img {
+.img-div {
   float: left;
-  margin: 0px 25px 25px 0px;
+  margin: 20px 20px 20px 0.5px;
+  padding: 30px;
+  box-shadow: inset 0 0 6px rgb(0, 0, 0);
+}
+
+.title-div {
+  margin-top: 20px;
 }
 
 .preview {
   font-size: 17px;
   line-height: 200%;
+  margin: 10px 10px;
 }
+
+
 
 .main-bg {
   background-color: #dfebe9;

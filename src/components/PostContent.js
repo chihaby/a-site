@@ -26,7 +26,7 @@ const PostContent = ({ id, title, content, url, user }) => {
         </Segment>
         <div className="slides">
           <div className="content-div">
-            <Image src={url}/>
+            <Image src={url} size='large' className="img-div"/>
             {content}
           </div>
         </div>

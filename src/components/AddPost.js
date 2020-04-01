@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { firestore, storage, auth } from '../firebase';
-import { Button, Form, TextArea, Icon, Image } from 'semantic-ui-react';
+import { Button, Form, TextArea, Icon, Image, Divider } from 'semantic-ui-react';
 
 
 class AddPost extends Component {
-  state = { title: '', preview:'', content: '',  url: "", progress: 0 };
+  state = { title: '', preview:'', content: '',  url: '', progress: 0 };
   
   handleUploadChange = e => {
     if (e.target.files[0]) {
@@ -14,9 +14,15 @@ class AddPost extends Component {
     }
   };
 
-  handleUpload = () => {
+  handleUpload = (e) => {
+    e.preventDefault(); 
+
+
+
     const { image } = this.state;
+
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
+
     uploadTask.on(
       "state_changed",
       snapshot => {
@@ -42,7 +48,7 @@ class AddPost extends Component {
           });
       }
     );
-  };
+  }
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -75,33 +81,33 @@ class AddPost extends Component {
     this.setState({ title: '', preview: '', content: '', image: null, url: "", progress: 0 });
   };
 
+
   render() {
     const { title, preview, content, url, progress } = this.state;
     return (
-      <div >
+      <div>
         <div style={{textAlign: 'center'}}> 
           <div >
             <progress value={progress} max="100" className="progress" />
           </div>
           <br />
           <div >
-            <div >
-              <Icon name='image' size='large' color='blue'/>
-              <input type="file" onChange={this.handleUploadChange} />
-            </div>
+            <Icon name='image' size='large' color='blue'/>
+            <input type="file" required multiple onChange={this.handleUploadChange} />
           </div> 
           <br />
           <Button color='red' size='massive'
             onClick={this.handleUpload}
           >
-            Upload
+            Upload 
           </Button>
           <br />
-          <Image 
-            size='small'
-            src={url}
-            alt="image"
-          />
+          <Divider/>
+            <Image 
+              size='large'
+              src={url}
+              alt=""
+            />
         </div>
 
         <div style={{textAlign: 'center' }}>
@@ -146,6 +152,7 @@ class AddPost extends Component {
       </div>
     );
   }
-}
+
+  }
 
 export default AddPost;
