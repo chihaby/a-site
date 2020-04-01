@@ -11,12 +11,9 @@ const Authentication = ({ loading }) => {
   const user = useContext(UserContext);
   if (loading) return null;
 
-  return <div>{user ? <div>
+  return <div style={{backgroundColor: 'lightGrey'}}>{user ? <div>
         <CurrentUser {...user}/>
-
-        <Advertisement unit='panorama' test='Welcome Andrea' />
-{/* 
-        <AddImage /> */}
+        <Advertisement unit='banner' centered test='Welcome Andrea' />
         <AddPost />
       </div> : <SignIn />}</div>;
 };

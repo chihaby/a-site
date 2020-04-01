@@ -78,30 +78,30 @@ class AddPost extends Component {
   render() {
     const { title, preview, content, url, progress } = this.state;
     return (
-      <div>
-        <div>
-        <div>
-          <progress value={progress} max="100" className="progress" />
-        </div>
-        <br />
-        <div >
+      <div >
+        <div style={{textAlign: 'center'}}> 
           <div >
-            <Icon name='image' size='large' color='blue'/>
-            <input type="file" onChange={this.handleUploadChange} />
+            <progress value={progress} max="100" className="progress" />
           </div>
-        </div> 
-        <br />
-        <Button color='green'
-          onClick={this.handleUpload}
-        >
-          Upload
-        </Button>
-        <br />
-        <Image 
-          size='small'
-          src={url}
-          alt="image"
-        />
+          <br />
+          <div >
+            <div >
+              <Icon name='image' size='large' color='blue'/>
+              <input type="file" onChange={this.handleUploadChange} />
+            </div>
+          </div> 
+          <br />
+          <Button color='red' size='massive'
+            onClick={this.handleUpload}
+          >
+            Upload
+          </Button>
+          <br />
+          <Image 
+            size='small'
+            src={url}
+            alt="image"
+          />
         </div>
 
         <div style={{textAlign: 'center' }}>

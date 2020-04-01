@@ -4,9 +4,9 @@ import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
 import { Header, Image, Segment } from 'semantic-ui-react'
 
-const belongsToCurrentUser = (currentUser, postAuthor) => {
+const belongsToCurrentUser = (currentUser) => {
   if(!currentUser) return false;
-  return currentUser.uid === postAuthor.uid;
+  return currentUser.uid;
 }
 
 const PostContent = ({ id, title, content, url, user }) => {
