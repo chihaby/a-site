@@ -26,8 +26,8 @@ class App extends React.Component {
                   <Route exact path="/posts/:id" component={PostPage} />
                 </Switch>
             </Container>
+            <Containers />
           </div>
-          <Containers />
         </div>
       );
   }
