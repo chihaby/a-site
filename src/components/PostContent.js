@@ -10,23 +10,25 @@ const belongsToCurrentUser = (currentUser) => {
   return currentUser.uid;
 }
 
-const PostContent = ({ id, title, content, url, user }) => {
+const PostContent = ({ id, title, content, url, user, imageName }) => {
+  console.log('image: ', imageName);
 
   const currentUser = useContext(UserContext);
   const postRef = firestore.doc(`posts/${id}`);
-  const imageRef = storage.refFromURL(url);
+  const storageRef = storage.ref();
+  const imagesRef = storageRef.child(`images/${imageName}`);
 
 const remove = () => {
-  imageRef.delete().then(() => {
-    postRef.delete()
-  }).catch(function(error) {
-    console.log(error)
-  })
+  postRef.delete();
+  imagesRef.delete().catch((error) => {
+    console.error(error)
+  });
 }
 
   // const update = () => postRef.update({ title, content});
-  console.log(imageRef);
+  console.log(imagesRef);
   console.log('url: ', url)
+  console.log('imgae: ', imageName)
 
   return (
       <>

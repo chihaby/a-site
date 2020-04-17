@@ -20,6 +20,7 @@ Remove image from url after it is uploaded with an X button
 https://www.youtube.com/watch?v=9e3ucpzk5zo
 
 automatically upload image
+ALERT IF NO TITLE PROVIDED  ( can not link to post )
 
 
 npm run deploy FOR DEPLOYMENT
