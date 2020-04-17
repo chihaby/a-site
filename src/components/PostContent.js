@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { firestore } from '../firebase';
+import { firestore, storage } from '../firebase';
 import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
 import { Header, Image, Segment } from 'semantic-ui-react';
@@ -11,12 +11,22 @@ const belongsToCurrentUser = (currentUser) => {
 }
 
 const PostContent = ({ id, title, content, url, user }) => {
-  console.log(url)
+
   const currentUser = useContext(UserContext);
   const postRef = firestore.doc(`posts/${id}`);
+  const imageRef = storage.refFromURL(url);
 
-  const remove = () => postRef.delete();
+const remove = () => {
+  imageRef.delete().then(() => {
+    postRef.delete()
+  }).catch(function(error) {
+    console.log(error)
+  })
+}
+
   // const update = () => postRef.update({ title, content});
+  console.log(imageRef);
+  console.log('url: ', url)
 
   return (
       <>
@@ -45,3 +55,5 @@ const PostContent = ({ id, title, content, url, user }) => {
   );
 };
 export default PostContent;
+
+

@@ -7,7 +7,7 @@ import { collectIdsAndDocs } from '../utilities';
 import { withRouter } from 'react-router-dom';
 
 class PostPage extends Component {
-  state = { post: null, comments: [] };
+  state = { post: null, comments: [], image: [] };
 
   get postId() {
     return this.props.match.params.id;
@@ -24,6 +24,7 @@ class PostPage extends Component {
 
   unsubscribeFromPost = null;
   unsubscribeFromComments = null;
+  unsubscribeFromImage = null;
 
   componentDidMount = async () => {
     this.unsubscribeFromPost = await this.postRef.onSnapshot(snapshot => {
@@ -31,7 +32,7 @@ class PostPage extends Component {
       this.setState({ post });
     });
 
-    this.unsubscribeFromComments = this.commentsRef.orderBy("content", "desc").onSnapshot(snapshot => {
+    this.unsubscribeFromComments = await this.commentsRef.orderBy("content", "desc").onSnapshot(snapshot => {
       const comments = snapshot.docs.map(collectIdsAndDocs);
       this.setState({ comments });
     });

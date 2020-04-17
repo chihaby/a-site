@@ -16,4 +16,10 @@ add email subscription
 read more on comments
 If no pic display message
 
+Remove image from url after it is uploaded with an X button
+https://www.youtube.com/watch?v=9e3ucpzk5zo
+
+automatically upload image
+
+
 npm run deploy FOR DEPLOYMENT

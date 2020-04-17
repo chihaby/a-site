@@ -2,10 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Header, Image, Button } from 'semantic-ui-react';
 
-const Post = ({ id, title, preview, url, image }) => {
-console.log("url: ");
-console.log("image: ", image)
-
+const Post = ({ id, title, preview, url }) => {
   return (
 
       <>

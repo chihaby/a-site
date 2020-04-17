@@ -10,14 +10,11 @@ class AddPost extends Component {
     if (e.target.files[0]) {
       const image = e.target.files[0];
       this.setState(() => ({ image }));
-      console.log("image: ", this.state.image)
     }
   };
 
   handleUpload = (e) => {
     e.preventDefault(); 
-
-
 
     const { image } = this.state;
 

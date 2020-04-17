@@ -18,7 +18,7 @@ class AddComment extends Component {
   render() {
     const { content } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} className="AddComment">
+      <div onSubmit={this.handleSubmit} className="AddComment">
           <Form>
                 <Form.Field>
                 <Icon name='comments'/>
@@ -36,7 +36,7 @@ class AddComment extends Component {
               <Button type='submit'>Add Comment</Button>
             </Form>
         
-      </form>
+      </div>
     );
   }
 }
