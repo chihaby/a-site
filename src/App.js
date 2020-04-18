@@ -11,7 +11,9 @@ import PostPage from './components/PostPage';
 // import { Footer } from './components/Footer';
 import {  Switch, Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
-import Containers from './components/Containers';
+// import Containers from './components/Containers';
+import { Footer } from './components/Footer';
+
 
 class App extends React.Component {
   render () {
@@ -26,8 +28,9 @@ class App extends React.Component {
                   <Route exact path="/posts/:id" component={PostPage} />
                 </Switch>
             </Container>
-            <Containers />
+            {/* <Containers /> */}
           </div>
+          < Footer />
         </div>
       );
   }

@@ -159,3 +159,14 @@
 .containers {
   margin-top: 100px;
 }
+
+.footer {
+  background-color: rgb(71, 71, 153);
+  color: white;
+  margin-top: 25px;
+  margin-bottom: 0px !important;
+  height: 60px;
+  padding: 10px;
+  text-align:center;
+  position: relative;
+}
