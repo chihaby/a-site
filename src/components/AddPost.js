@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { firestore, storage, auth } from '../firebase';
 import { Button, Form, TextArea, Icon, Image, Divider } from 'semantic-ui-react';
 
-
 class AddPost extends Component {
-  state = { title: '', preview:'', content: '',  url: '', imageName: '', progress: 0, };
+  state = { title: '', preview:'', content: '',  url: '', imageName: '', progress: 0 };
   
   handleUploadChange = e => {
     if (e.target.files[0]) {
@@ -18,13 +17,8 @@ class AddPost extends Component {
 
   handleUpload = e => {
     e.preventDefault(); 
-
-    const { image, imageName } = this.state;
-    console.log(image)
-    console.log(imageName)
-
+    const { image } = this.state;
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
-
     uploadTask.on(
       "state_changed",
       snapshot => {
@@ -58,11 +52,9 @@ class AddPost extends Component {
   };
 
   handleSubmit = event => {
-    event.preventDefault();
-    
+    event.preventDefault(); 
     const { title, preview, content, url, imageName, progress } = this.state;
     const { uid, displayName, email, photoURL } = auth.currentUser || {};
-
     const post = {
       title,
       preview,
@@ -78,12 +70,9 @@ class AddPost extends Component {
       },
       createdAt: new Date(),
     }
-
     firestore.collection('posts').add(post);
-
     this.setState({ title: '', preview: '', content: '', url: "", progress: 0, imageName: '' });
   };
-
 
   render() {
     const { title, preview, content, url, progress } = this.state;
@@ -112,7 +101,6 @@ class AddPost extends Component {
               alt=""
             />
         </div>
-
         <div style={{textAlign: 'center' }}>
           <Form onSubmit={this.handleSubmit}>
             <Form.Field>
