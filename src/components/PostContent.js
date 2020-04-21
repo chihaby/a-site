@@ -11,7 +11,6 @@ const belongsToCurrentUser = (currentUser) => {
 }
 
 const PostContent = ({ id, title, content, url, user, imageName }) => {
-  console.log('image: ', imageName);
 
   const currentUser = useContext(UserContext);
   const postRef = firestore.doc(`posts/${id}`);
@@ -26,9 +25,6 @@ const remove = () => {
 }
 
   // const update = () => postRef.update({ title, content});
-  console.log(imagesRef);
-  console.log('url: ', url)
-  console.log('imgae: ', imageName)
 
   return (
       <>
