@@ -25,17 +25,17 @@ const Example = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar style={{margin: "auto", float: 'right'}}>
-            <NavItem >
+            {/* <NavItem >
               <NavLink className='nav-link' href="/components/" >Family Support</NavLink>
+            </NavItem> */}
+            <NavItem>
+              <NavLink className='nav-link' href="/about" >About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className='nav-link' href="/components/" >Shop</NavLink>
+              <NavLink className='nav-link' href="/services" >Services</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Apply</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className='nav-link' href="https://github.com/reactstrap/reactstrap" >Blog</NavLink>
+              <NavLink className='nav-link' href="/contact" >Contact</NavLink>
             </NavItem>
           </Nav>
           {/* <NavbarText className="button-hope">Donate</NavbarText> */}
