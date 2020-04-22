@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { firestore, storage } from '../firebase';
 import { UserContext } from '../providers/UserProvider';
 import { Link } from 'react-router-dom';
-import { Header, Image, Segment } from 'semantic-ui-react';
-import InnerNavbar from './InnerNavbar';
+import { Header, Image, Segment, Icon } from 'semantic-ui-react';
+// import InnerNavbar from './InnerNavbar';
 
 const belongsToCurrentUser = (currentUser) => {
   if(!currentUser) return false;
@@ -28,13 +28,13 @@ const remove = () => {
 
   return (
       <>
-      <InnerNavbar />
-        <Segment color='teal' >
-          <Link to={`/posts/${id}`}>
-            <Header as='h2' color='violet' textAlign='center' >{title}</Header>
+        <Segment color='teal' style={{textAlign: 'center'}}>
+          <Link to={`/`}>
+            <Icon name='home' size='big' color='blue'/>
           </Link>
         </Segment>
         <div className="slides">
+        <Header as='h1' color='violet' textAlign='center' style={{fontStyle: 'italic'}} >{title}</Header>
           <div className="content-div">
             <Image src={url} size='large' className="img-div"/>
             {content}

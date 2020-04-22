@@ -106,8 +106,8 @@ class AddPost extends Component {
     const { title, preview, content, url, progress, titleError, previewError, contentError, urlError } = this.state;
     return (
       <div>
-        <div style={{textAlign: 'center'}}> 
-          <div >
+        <div> 
+          <div>
             <progress value={progress} max="100" className="progress" />
           </div>
           <br />
