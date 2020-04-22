@@ -9,7 +9,7 @@ const Post = ({ id, title, preview, url }) => {
         <div className="slides">
           <div >
             <div className="img-div">
-              <Image src={url} alt="imaaaag" size='large'/>
+              <Image src={url} alt="img" size='large' style={{maxWidth: '400px', maxHeight: '400px'  }}/>
             </div>
             <div className="title-div">
               <Link to={`/posts/${id}`}>
