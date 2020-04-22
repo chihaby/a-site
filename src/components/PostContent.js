@@ -34,11 +34,12 @@ const remove = () => {
           </Link>
         </Segment>
         <div className="slides">
-        <Header as='h1' color='violet' textAlign='center' style={{fontStyle: 'italic'}} >{title}</Header>
           <div className="content-div">
-            <Image src={url} size='large' className="img-div"/>
-            {content}
+            <Image src={url} size='large' className="img-div"/>            
           </div>
+          <Header as='h1' color='violet' textAlign='center' style={{fontStyle: 'italic'}} >{title}</Header>
+          <br />
+          {content}
         </div>
         <div style={{textAlign: 'center'}}>
           <div>

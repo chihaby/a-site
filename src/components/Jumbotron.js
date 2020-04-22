@@ -10,7 +10,7 @@ const Jumbo = (props) => {
       <Jumbotron className='Jumbo-background'>
         <div>
         <p className="lead">
-          <Button onClick={signInWithGoogle} style={{float: 'right'}} color="primary">Login</Button>
+          <Button className="login-button" onClick={signInWithGoogle} color="primary">Login</Button>
         </p>
         <img className="photo-bio" src={photo} alt="avatar"/>
         <h3 className="display-3">Athenation</h3>

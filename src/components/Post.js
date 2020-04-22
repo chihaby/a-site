@@ -11,11 +11,13 @@ const Post = ({ id, title, preview, url }) => {
             <div className="img-div">
               <Image src={url} alt="img" size='large' style={{maxWidth: '400px', maxHeight: '400px'  }}/>
             </div>
+            <br />
             <div className="title-div">
               <Link to={`/posts/${id}`}>
                 <Header as='h1' color='violet' textAlign='center' >{title}</Header>
               </Link>
             </div>
+            <br />
             <div className="preview">
               {preview}
             </div>

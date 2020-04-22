@@ -9,7 +9,7 @@ import {
   NavLink,
   // NavbarText
 } from 'reactstrap';
-import { Icon, Button } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +39,8 @@ const Example = (props) => {
             </NavItem>
           </Nav>
           {/* <NavbarText className="button-hope">Donate</NavbarText> */}
-          <Button color='orange'>Donate</Button>
+          {/* <Button color='orange'>Donate</Button> */}
         </Collapse>
-   
       </Navbar>
 
     </div>

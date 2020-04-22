@@ -35,7 +35,7 @@ class AddComment extends Component {
                 </Form.Field>
               <Button type='submit'>Add Comment</Button>
             </Form>
-        
+            <br />        
       </div>
     );
   }
