@@ -9,7 +9,7 @@ const Post = ({ id, title, preview, url }) => {
         <div className="slides">
           <div >
             <div className="img-div">
-              <Image src={url} alt="img" size='large' style={{maxWidth: '400px', maxHeight: '400px'  }}/>
+              <Image src={url} alt="img" size='large'/>
             </div>
             <br />
             <div className="title-div">
@@ -31,3 +31,5 @@ const Post = ({ id, title, preview, url }) => {
   );
 };
 export default Post;
+
+// style={{maxWidth: '400px', maxHeight: '400px'  }}
